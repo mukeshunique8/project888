@@ -1,0 +1,585 @@
+* {
+  margin: 0px ;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url("dashbgimg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: brightness(1.1);
+    /* backdrop-filter: blur(0.1rem); */
+    overflow: hidden;
+    /* filter: contrast(1.5); */
+    filter: grayscale(0.10);
+    /* filter: invert(1.0); */
+    /* filter: opacity(0.5); */
+    /* filter: drop-shadow(1.5); */
+    z-index: -1;
+}
+
+
+header {
+  /* position: relative;
+  top: 0; */
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+
+
+}
+
+
+.leftWrap{
+  display: flex;
+  justify-content: flex-start;
+}
+.rightWrap{
+  display: flex;
+  justify-content: flex-end;
+}
+.headerWrap {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.logo img {
+  height: 65px;
+  border-radius:10px;
+}
+#logo-saral img{
+  width: 100px;
+  height: 100px;
+}
+
+.flag-india{
+  display: flex;
+  text-align: center;
+ justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: auto;
+  /* background: linear-gradient(to bottom right, #e2a76d 30%, #e7d9d9 60%, #91d88a 90%);
+  border: 1px snow ; */
+  /* box-shadow: 1px 1px 15px rgba(226, 222, 222, 0.959); */
+   border-radius: 5px;
+   color: rgb(244, 244, 247);
+   font-size: 1.5rem;
+}
+
+.flag-us{
+  display: flex;
+  text-align: center;
+ justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: auto;
+  /* background: linear-gradient(to bottom right, #e2a76d 30%, #e7d9d9 60%, #91d88a 90%);
+  border: 1px snow ; */
+  /* box-shadow: 1px 1px 15px rgba(226, 222, 222, 0.959); */
+   border-radius: 5px;
+   color: rgb(244, 244, 247);
+   font-size: 1.5rem;
+}
+
+/*****************************************************************************************************/
+.navbar{
+  width:100%;
+  display: flex;
+}
+.logout-button{
+  margin-right: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+/* Styling for the hamburger menu */
+.menu-button {
+  display: inline-block;
+  cursor: pointer;
+  
+
+}
+/* Position the menu button on the left and logout button on the right */
+.menu-button {
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+.logout-button {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+/* Position the user dashboard */
+.user-dashboard {
+    position: fixed;
+    bottom: -400px;
+    left: 50%;
+    width: 400px;
+    background-color: #f2f2f2;
+    transition: 0.5s;
+    transform: translateX(-50%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid white;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-family: cursive;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the profile image */
+.profile-image-container {
+    margin-top: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.user-dashboard.active {
+  bottom: 50%; /* Center the dashboard vertically */
+}
+
+.logout-button {
+  background-color: #e74c3c; /* Red background color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.menu-icon {
+  width: 30px;
+  height: 3px;
+  background: linear-gradient(to right, #26e495, #e9cf3e);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+
+
+.user-dashboard {
+  position: fixed;
+  bottom: -400px; /* Start off-screen at the bottom */
+  left: 51%; /* Start at the horizontal center of the page */
+  width: 400px;
+  height: 400px;
+  background-color: #f2f2f2;
+  transition: 0.5s;
+  transform: translateX(-50%); /* Center the element horizontally */
+  
+}
+
+.user-dashboard{
+
+  padding: 20px 50px;
+  display:flex;
+  flex-direction:column;
+  row-gap:20px;
+  font-size:1.2rem  ;
+  font-family:cursive;
+  border:3px solid white;
+  border-radius:20px;
+
+
+
+}
+
+/* Show the user dashboard when it's active */
+
+.user-dashboard.active{
+  position: fixed;
+  bottom: 100px;
+  left: 51%;
+  width: 400px;
+  height: 500px;
+  background-color: #f2f2f2;
+  transition: 0.5s;
+  transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************************************************************************************************/
+
+
+
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  padding: 10px 20px;
+  margin-top: 50px;
+  min-height: 550px;
+}
+
+
+.leftPanel{
+  display: grid;
+  grid-template-rows: auto auto ;
+
+}
+
+.section1 {
+  display: grid;
+  grid-template-columns: auto auto;
+
+}
+.leftPanel img {
+  height: 100px;
+  
+  border-radius: 50%;
+}
+
+.leftPanel img:hover{
+animation: spin 2s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  10% {
+      transform: rotate(1080deg);
+      transform: scale(1.3);
+      /* Rotate three times (360 degrees * 3) */
+    }
+
+    75% {
+      transform: rotate(1080deg);
+      transform: scale(1.0);
+      /* Rotate three times (360 degrees * 3) */
+    }
+  
+  100% {
+    transform: rotate(1080deg);
+    transform: scale(2.0);
+    /* Rotate three times (360 degrees * 3) */
+  }
+}
+
+
+.leftPanel ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+
+
+
+.section2{
+
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 40px;
+
+}
+.section2 img{
+  height: 80px;
+  border-radius: 5px;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////// */
+
+.middlePanel {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-decoration: none;
+  text-align: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  column-gap: 80px;
+  padding-right: 50px;
+
+}
+
+.middlePanel a{
+  text-decoration: none;
+   color: black;
+  background-color:white;
+  width:200px;
+  height:70px;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:2px solid black ;
+  border-radius:10px;
+  font-size:20px;
+  font-weight: lighter;
+  font-family:times;
+  box-shadow: 50px 5px 10px rgba(247, 238, 238, 0.3);}
+
+
+.middlePanel a:nth-child(1) {
+  background: linear-gradient(to right, #26e495, #e9cf3e);
+
+}
+
+.middlePanel a:nth-child(2) {
+  background: linear-gradient(to left, #26e495, #e9cf3e);
+  
+}
+
+.middlePanel a:nth-child(3) {
+  background: linear-gradient(to right, #51b2eb, #f171e0);
+  
+}
+.middlePanel a:nth-child(4) {
+  background: linear-gradient(to left, #51b2eb, #f171e0);
+
+}
+
+.middlePanel a:nth-child(5) {
+  background: linear-gradient(to left, #ee4040, #665d9b7c);
+
+}
+
+.middlePanel a:nth-child(6) {
+  background: linear-gradient(to right, #ee4040, #5141b17c);
+ 
+}
+
+.middlePanel a:nth-child(7) {
+  background: linear-gradient(to right, #4651e9, #46addd);
+  
+}
+
+.middlePanel a:nth-child(8) {
+  background: linear-gradient(to left, #4651e9, #46addd);
+  
+}
+.middlePanel a:nth-child(9) {
+  
+  background: linear-gradient(to left, #e2dcdc, #0605077c);
+}
+
+.middlePanel a:nth-child(10) {
+  background: linear-gradient(to right, #e2dcdc, #0605077c);
+  
+}
+
+.middlePanel a:nth-child(11) {
+  background: linear-gradient(to left, #3cc977, #a4e666);
+  
+
+  
+}
+
+.middlePanel a:nth-child(12) {
+  
+  background: linear-gradient(to right, #68d897, #c9ff97);
+}
+
+.middlePanel a:hover{
+ transform:scale(1.2);
+  box-shadow: 0 0 15px #f2f6fa, 0 0 30px #f1f5f4, 0 0 30px #f3f4f5, 0 0 80px #fff;
+}
+
+footer  {
+text-align: center;
+font-family: cursive;
+font-size: 0.7rem;
+color: white;
+padding-top: 20px;
+}
+
+
+/* ********************************************************************** */
+
+
+.leftPanel.middlePanel {
+border: 3px solid transparent; /* Set the border to transparent so the glow effect is visible */
+animation: neon-glow 60s ease-in-out infinite;
+}
+
+
+
+.middlePanel a {
+border: 3px solid transparent; /* Set the border to transparent so the glow effect is visible */
+animation: neon-glow 60s ease-out infinite;
+}
+
+@keyframes neon-glow {
+0% {
+    box-shadow: 1px 0px 15px #040705;
+}
+
+33% {
+  box-shadow: 0px 1px 15px #000000;
+}
+
+66% {
+box-shadow: -1px 0 15px #0c0c0b;
+}
+
+
+100% {
+    box-shadow: 0 -1px 2px #0c0b0b;
+}
+}
+
+
+
+
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 600px) {
+body {
+  background: linear-gradient(113.5deg, rgba(234, 234, 234, 0) 22.3%, rgba(201, 234, 211, 0) 56.6%, rgba(255, 180, 189, 0) 90.9%), black;
+  overflow-y: auto;
+}
+
+header{
+   top: 0;
+  padding-bottom: 0px;
+}
+
+section{
+  height: auto;
+  overflow-y: auto;
+}
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  height: auto;
+}
+
+.flag-india{
+ 
+   font-size: 1rem;
+}
+
+.flag-us{
+   font-size: 1rem;
+}
+
+section{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0px;
+  margin-top: 20px;
+
+}
+
+
+
+
+  .section1 ul{
+  column-gap: 50px;
+  row-gap: 30px;
+  justify-content: center;
+
+
+}
+.section1 ul li img{
+  height: 70px;
+
+  
+}
+
+.leftPanel{
+  padding-bottom: 30px;
+
+}
+
+
+
+.middlePanel{
+  justify-content: space-evenly;
+  row-gap: 20px ;
+}
+
+.middlePanel a{
+  text-decoration: none;
+   color: black;
+  background-color:white;
+  width:150px;
+  height:40px;
+  text-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border:2px solid black ;
+  border-radius:10px;
+  font-size:1rem;
+  font-family:times;
+}
+.section2{
+
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+
+}
+.section2 img{
+  height: 50px;
+  border-radius: 8px;
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* ***************************MAGIC CURSOR*************************** */
+

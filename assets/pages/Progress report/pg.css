@@ -1,0 +1,265 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+ body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+header{
+    text-align: center;
+    font-size: 50px;
+    font-family: Cedarville;
+}
+
+p{
+    font-size: 30px;
+}
+/*--------------------------------------------------*/
+
+
+
+.nameTopic {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 35px;
+}
+
+.nameTopic input{
+    display: block;
+    margin-top: 10px;
+    width: 250px;
+    font-size: 30px;
+    bo
+   
+}
+.nameTopic input:hover{
+    opacity: 25%;
+    transition: opacity 1s;
+
+}
+
+.nameTopic > div {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+
+}
+.nameTopic label{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: cursive;
+}
+/*--------------------------------------------------*/
+#plus-btn,
+#minus-btn {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#plus-btn:hover {
+    color: green;
+    animation: bubble-green 0.5s ease-in-out infinite;
+}
+
+#minus-btn:hover {
+    color: red;
+    animation: bubble-red 0.5s ease-in-out infinite;
+}
+
+#plus-btn:active {
+    color: white;
+    background-color: green; /* Change to desired color */
+    animation: burst-green 0.5s ease-in-out forwards;
+}
+
+#minus-btn:active {
+    color: white;
+    background-color: red; /* Change to desired color */
+    animation: burst-red 0.5s ease-in-out forwards;
+}
+
+@keyframes bubble-green {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bubble-red {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes burst-green {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(5);
+    }
+}
+
+@keyframes burst-red {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(5);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------*/
+
+
+.question{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid columns */    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 10px   ;
+}
+
+
+
+
+/*--------------------------------------------------*/
+
+.parts{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 50px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.parts input{
+    width: 400px;
+    height: 50px;
+    direction: ltr;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+
+}
+
+.points input{
+    width: 100px;
+    margin-left: 140px;
+}
+.points h2{
+    margin-left: 145px;
+
+}
+
+/*--------------------------------------------------*/
+
+.pgGenerator{
+    margin-left: 50px;
+    margin-top: 50px;
+
+    position: absolute;
+    left: 600px;
+    top:400px;
+    
+}
+.pgGenerator label{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.pgGenerator input{
+    width: 500px;
+    height: 100px;
+    font-family: cursive;
+    font-size: 10px;
+    
+}
+.pgGenerator button{
+    width: 80px;
+    height: 30px;
+   font-weight: bold;
+   background-color: rgb(0, 0, 0);
+   color: white;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#pgReport {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word; /* For older browser compatibility */
+  }
+  #copy-btn{
+    background-color:green;
+    border:1px solid ;
+    font-size:20px;
+    border-radius:10px;
+    color:white;
+    
+  }
+
+  #con-btn{
+    width:100px;
+    color:black;
+    background-color:#f55a9b;
+    border:1px solid ;
+    font-size:20px;
+    border-radius:10px;
+    font-weight:bold;
+  }
+ 
+
+
+
+/* backgorund clors */
+
+.fluid-background {
+    background: linear-gradient(219deg, #1beeb8, #7acc1c, #58dd7b, #37d4b9, #74c0ec, #9f78d5, #cf90d9, #e864c6, #ec888c, #f3bea6);
+    background-size: 2000% 2000%;
+
+    animation: AnimationName 56s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:69% 0%}
+    50%{background-position:32% 100%}
+    100%{background-position:69% 0%}
+}
+
+/* backgorund clors */

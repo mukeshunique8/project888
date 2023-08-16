@@ -1,0 +1,178 @@
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+   font-family: 'Open Sans',serif;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+body {
+  width: 100%;
+  background: linear-gradient(to right, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89));}
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************************* */
+
+.info-container{
+ display: flex;
+ flex-direction: column;
+ justify-content:flex;
+ margin: 20px;
+ /* border: 0.2px solid white; */
+ border-radius: 3px;
+ /* background: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%); */
+
+
+}
+
+.managers-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Create four equal-width columns */
+  gap: 20px; /* Add gap between the divs */
+  /* Other styles */
+  
+}
+
+
+
+.gap-info{
+  background-color: black;
+}
+
+.tutor-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px; /* Add some space between the divs */
+  padding: 10px;
+  place-items:center;
+  
+}
+
+/* ////////////////////////////////////////////////// */
+
+.math-pm h2{
+  font-size: 15PX;
+  font-family:cursive;
+
+
+}
+
+.math-pm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+  padding-bottom: 20px;
+
+  row-gap: 10px ;
+  /* border: 0.2px solid white; */
+  border-radius: 5px;
+
+  margin: 20px;
+  background: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ cursor: pointer;
+}
+@keyframes flipZoomAnimation {
+  0% {
+    transform: perspective(1000px) rotateX(0) scale(1);
+  }
+ 
+  50% {
+    transform: perspective(10000px) rotateX(0deg) scale(0.8);
+  }
+  
+  100% {
+    transform: perspective(1000px) rotatey(0) scale(1);
+  }
+}
+
+.math-pm:hover {
+  animation: flipZoomAnimation 0.5s ease-in-out 1;
+
+}
+.math-pm a{
+  font-size:15px;
+  text-decoration:none;
+  color:black;
+  font-family:cursive;
+
+
+
+}
+.math-pm img{
+  max-width:100%;
+  max-height: 360px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+/* /////////////////////// */
+
+
+.math-tutor{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0px;
+
+  row-gap: 10px ;
+  /* border: 0.2px solid white; */
+  border-radius:5px;
+  width: 300px;
+
+  background-color: aliceblue;
+}
+.math-tutor h2{
+  font-size: 15PX;
+
+}
+.math-tutor img{
+  max-width:100%;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+.math-tutor:hover {
+  animation: flipZoomAnimation 0.5s ease-in-out 1;
+
+}
+
+
+/* ******************************************************* */
+.tutor-container a{
+  font-size:15px;
+  text-decoration:none;
+  color:black;
+  font-family:cursive;
+
+  
+}
+.tutor-container a:hover{
+  font-size:16px;
+  text-decoration:none;
+  color:white;
+  background-color:black;
+  border:1px solid white;
+  border-radius:5px;
+  transform:scale(1.1);
+  
+}
+
+

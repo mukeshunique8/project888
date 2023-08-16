@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pg.css">
+    <link href='https://unpkg.com/css.gg@2.0.0/icons/css/work-alt.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="fluid-background">
+
+    <header>Progress Report</header>
+    
+
+    <div class="nameTopic">
+        <div>
+            <label >Student Name</label>
+            <input id="studentName" type="text" >
+        </div>
+        <div>
+            <label >Topic</label>
+            <input id="topic" type="text" >
+        </div>
+    </div>
+
+    <div class="question">
+
+        <div class="tutor">
+            <h1>TUTOR ASSISTANCE</h1>
+            <P id="tutor-el">0</P>
+            <button id="plus-btn" onclick="increment1()">+</button><br>
+            <button  id="minus-btn" onclick="decrement1()">-</button>
+        </div>
+      
+        <div class="independent">
+            <h1>INDEPENDENT</h1>
+            <P id="independent-el">0</P>
+            <button  id="plus-btn" onclick="increment2()">+</button><br>
+            <button id="minus-btn" onclick="decrement2()">-</button>
+        </div>
+        <div class="exit">
+            <h1>EXIT</h1>
+            <P id="exit-el">0</P>
+            <button  id="plus-btn" onclick="increment3()">+</button><br>
+            <button id="minus-btn" onclick="decrement3()">-</button>
+        </div>
+
+        <div class="exitPoints">
+            <h1>Exit-Points</h1>
+            <P id="exitPoints-el">0</P>
+            <button  id="plus-btn" onclick="increment4()">+</button><br>
+            <button id="minus-btn" onclick="decrement4()">-</button>
+        </div>
+        
+        <div class="bonus">
+            <h1>BONUS</h1>
+            <P id="bonus-el">0</P>
+            <button id="plus-btn" onclick="increment5()">+</button><br>
+            <button id="minus-btn" onclick="decrement5()">-</button>
+        </div>
+
+    </div>
+    
+    <div class="parts">
+
+    <div class="able">
+        <h2>ABLE</h2>
+        <input id="able-el"  type="text" >
+    </div>
+    <div class="Difficulty">
+        <h2>DIFFICULTY</h2>
+        <input  id="difficulty-el" type="text" >
+    </div>
+    
+    <div class="points">
+        <h2>POINTS</h2>
+        <input id="points-el" type="text" >
+    </div>
+    
+    </div>
+
+    <div class="pgGenerator">
+        <label id="pg">REPORT</label><br>
+        <input id= "pgReport"type="text" readonly>
+        <button id= "con-btn" onclick="concatenatedValues()">Generate</button>
+        <button id= "copy-btn"onclick="copyText()">COPY</button>
+
+
+    </div>
+</div>
+    <script src="pg.js">
+        
+
+    </script>
+</body>
+</html>

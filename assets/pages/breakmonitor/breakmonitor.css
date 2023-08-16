@@ -1,0 +1,25 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  margin: 50px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+header{
+  text-align: center;
+  font-size: 30px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.container3 {
+  grid-column: span 2;
+}

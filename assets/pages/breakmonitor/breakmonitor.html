@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Break Monitor</title>
+    <link rel="stylesheet" href="breakmonitor.css">
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+body {
+  margin: 0;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  font-family:cursive;
+  background: linear-gradient(to right, #7ae4e7, #f5f3f4);
+  color: #333;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+  background: linear-gradient(to right, #7ae4e7, #f5f3f4);
+}
+
+
+.breakregisterlink{
+  padding-top: 20px;
+
+
+}
+.breakregisterlink a{
+  display: flex;
+  text-decoration: none;
+  background-color: #ccc;
+  color: rgb(22, 21, 21);
+  background-color: rgb(143, 230, 63);
+  width: auto;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    /* border: 1px solid #0e0d0d; */
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+.container1,
+.container2,
+.container3 {
+    border: 1px solid #0d0d0e;
+    padding: 10px;
+    text-align: center;
+}
+
+.container3 {
+    grid-column: span 2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+
+/* Animation for alternating row colors */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect */
+tr:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+    background-color: #f07464;
+}
+
+/* Animation for table headers */
+th {
+    background-color: #333;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+th:hover {
+    background-color: #ee3636;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+    <header>
+        <h3>Break Monitor</h3>
+
+        <div class="breakregisterlink">
+
+            <a href="../breaksheets/breakregister.php">Break <span> Register</span></a>
+    
+        </div>
+    </header>
+
+    <div class="wrapper">
+
+   
+
+    <div class="container1">
+        <h3>Break Count</h3>
+        <table id="breakCounts">
+            <tr>
+                <th>Employee Name</th>
+                <th>Total Breaks</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container2">
+        <h3>Total Duration</h3>
+        <table id="totalDuration">
+            <tr>
+                <th>Employee Name</th>
+                <th>Total Break Duration</th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container3">
+        <h3>Break Logs</h3>
+        <table id="breakTable">
+            <tr>
+                <th>ID</th>
+                <th>Employee Name</th>
+                <th>Check Type</th>
+                <th>Timestamp</th>
+            </tr>
+        </table>
+    </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        function updateBreakCounts() {
+            $.ajax({
+                url: 'get_break_count.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    $('#breakCounts tr:gt(0)').remove();
+
+                    for (var employeeName in data) {
+                        var row = $('<tr>');
+                        row.append($('<td>').text(employeeName));
+                        row.append($('<td>').text(data[employeeName]));
+                        $('#breakCounts').append(row);
+                    }
+                },
+                error: function () {
+                    console.log('Error fetching break counts from server.');
+                }
+            });
+        }
+
+        function updateBreakTable() {
+            $.ajax({
+                url: 'get_break_data.php',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    var table = $('#breakTable');
+                    table.find('tr:gt(0)').remove();
+
+                    for (var i = 0; i < data.length; i++) {
+                        var row = $('<tr>');
+                        row.append($('<td>').text(data[i].id));
+                        row.append($('<td>').text(data[i].employee_name));
+                        row.append($('<td>').text(data[i].check_type));
+                        row.append($('<td>').text(data[i].timestamp));
+                        table.append(row);
+                    }
+                },
+                error: function () {
+                    console.log('Error fetching data from server.');
+                }
+            });
+        }
+function updateTotalDuration() {
+    $.ajax({
+        url: 'get_break_duration.php', // Replace with the actual URL
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            $('#totalDuration tr:gt(0)').remove();
+
+            // Sort data by total duration in descending order
+            var sortedData = Object.keys(data).map(function(employeeName) {
+                return { name: employeeName, duration: data[employeeName].totalDuration };
+            }).sort(function(a, b) {
+                return b.duration - a.duration;
+            });
+
+            for (var i = 0; i < sortedData.length; i++) {
+                var employeeName = sortedData[i].name;
+                var totalDurationInSeconds = sortedData[i].duration;
+                var totalDurationFormatted = formatDuration(totalDurationInSeconds);
+                
+                var row = $('<tr>');
+                row.append($('<td>').text(employeeName));
+                row.append($('<td>').text(totalDurationFormatted));
+                $('#totalDuration').append(row);
+            }
+        },
+        error: function () {
+            console.log('Error fetching total duration from server.');
+        }
+    });
+}
+
+function formatDuration(durationInSeconds) {
+    var hours = Math.floor(durationInSeconds / 3600);
+    var minutes = Math.floor((durationInSeconds % 3600) / 60);
+    var seconds = durationInSeconds % 60;
+    
+    // Add leading zeroes to hours, minutes, and seconds if needed
+    var formattedHours = hours.toString().padStart(2, '0');
+    var formattedMinutes = minutes.toString().padStart(2, '0');
+    var formattedSeconds = seconds.toString().padStart(2, '0');
+    
+    return formattedHours + ':' + formattedMinutes + ':' + formattedSeconds;
+}
+
+
+
+        // Update break counts initially and every 5 seconds
+        $(document).ready(function () {
+            updateBreakCounts();
+            setInterval(updateBreakCounts, 5000);
+        });
+
+        // Update break table initially and every 5 seconds
+        $(document).ready(function () {
+            updateBreakTable();
+            setInterval(updateBreakTable, 5000);
+        });
+
+        // Update total duration initially and every 5 seconds
+        $(document).ready(function () {
+            updateTotalDuration();
+            setInterval(updateTotalDuration, 5000);
+        });
+    </script>
+    
+</body>
+
+</html>
