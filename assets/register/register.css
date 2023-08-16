@@ -1,0 +1,88 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: radial-gradient(circle at 50% 30%, rgb(137, 247, 254) 30%, rgb(102, 166, 255) 70%);
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+
+.employeeDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 400px;
+    height: 600px;
+    padding: 20px;
+    
+
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+label{
+    margin: 5px;
+    font-size: 25px;
+}
+input{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 200px;
+    text-align: center;
+    height: 50px;
+    margin-bottom: 5px;
+
+}
+
+.eye-icon{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+#register-btn{
+    width: 90px;
+    height: 50px;
+     font-size: 15px;
+     margin-bottom: 50px;
+     border: 0px solid white;
+     border-radius: 8%;
+     font-family:monospace;
+     font-weight: bold  ;
+     background-color: black;
+     color:white;
+}
+#register-btn:hover{
+    width: 90px;
+     font-size: 15px;
+     background-color: rgb(32, 31, 31);
+     color: aliceblue;
+     font-family: cursive;
+     transition:0.1s;
+}
+
+/* Additional styles for the new fields */
+input[type="tel"] {
+    /* Add any specific styles for the phone number input */
+}
+
+/* Style for the file input */
+input[type="file"] {
+    /* Add any specific styles for the file input */
+    padding:5px;
+    background-color:white;
+    height:50px;
+    width:250px;
+    
+}
+

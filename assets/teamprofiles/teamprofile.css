@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body {
+    font-family: 'Open Sans',serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+  }
+  
+  .team-profiles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  .profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+  
+  .profile-content {
+    flex: 1;
+  }
+  
+  .profile h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #0066cc; /* Blue color for h2 tag */
+  }
+  
+  .profile h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ff9900; /* Orange color for h3 tag */
+  }
+  
+  .profile p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+  }
+  
